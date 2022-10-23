@@ -72,7 +72,6 @@ public class VistaPrincipal extends javax.swing.JFrame implements Observer {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_Archivo = new javax.swing.JMenu();
         jMenuItem_Abrir = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -109,7 +108,7 @@ public class VistaPrincipal extends javax.swing.JFrame implements Observer {
 
         jMenu_Archivo.setText("Archivo");
 
-        jMenuItem_Abrir.setText("Abrir");
+        jMenuItem_Abrir.setText("ABRIR ARCHIVO TXT");
         jMenuItem_Abrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem_AbrirActionPerformed(evt);
@@ -118,9 +117,6 @@ public class VistaPrincipal extends javax.swing.JFrame implements Observer {
         jMenu_Archivo.add(jMenuItem_Abrir);
 
         jMenuBar1.add(jMenu_Archivo);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -277,7 +273,6 @@ public class VistaPrincipal extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem_Abrir;
     private javax.swing.JMenu jMenu_Archivo;
