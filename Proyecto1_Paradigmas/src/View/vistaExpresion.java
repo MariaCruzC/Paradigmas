@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -158,6 +159,7 @@ public class vistaExpresion extends javax.swing.JFrame {
     private void Analizar_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Analizar_jButton1ActionPerformed
         nuevoExp = Expresion_jTextField.getText();
         LogicFunction lf = new LogicChain(nuevoExp);
+        JOptionPane.showMessageDialog(this, "Letras invalidas!");
         //LogicFunction s = model.describeSentence(exp.getExpresion());
         jTextArea1_TableTruth.setText(lf.getTruthTableRepresentation());
         jTextArea2_Canonica.setText("Canónicas Disyuntivas: " + lf.expressAsSumOfMinterms() + "\n"+ "Canónicas Conjuntivas: " + lf.expressAsProductOfMaxterms());
@@ -171,6 +173,7 @@ public class vistaExpresion extends javax.swing.JFrame {
         bw = new BufferedWriter(fw);
         bw.write(nuevoExp+"\n");
         System.out.println("información agregada!");
+        JOptionPane.showMessageDialog(this, "Información agregada! en carpeta Save File del proyecto");
     } catch (IOException e) {
         e.printStackTrace();
     } finally {

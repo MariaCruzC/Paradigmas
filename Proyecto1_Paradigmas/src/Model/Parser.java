@@ -2,6 +2,7 @@ package Model;
 
 import java.util.Arrays;
 import java.util.regex.*;
+import javax.swing.JOptionPane;
 
 public class Parser {
 
@@ -143,7 +144,9 @@ public class Parser {
     private static String evaluaExpresion(String s) {
         s = s.toUpperCase();
         if (!pattern.matcher(s).matches())
-            throw new RuntimeException("Letras invalidas!"); //HACER JOptionPane
+            //throw new RuntimeException("Letras invalidas!");//HACER JOptionPane
+               JOptionPane.showMessageDialog(null, "Letras invalidas!",
+                         "WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);
 
         // Se encarga de eliminar espacios en blanco (da muchos ERRORES!)
         s = Pattern.compile("[ \t]").matcher(s).replaceAll("");
