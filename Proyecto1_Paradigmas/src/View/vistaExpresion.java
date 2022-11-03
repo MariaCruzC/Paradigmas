@@ -50,8 +50,8 @@ public class vistaExpresion extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
         this.setLocationRelativeTo(null);
         this.setSize(600, 700);
-        jTextArea1_TableTruth.setText("|p | q | r | f(p q r)");
-        jTextArea2_Canonica.setText("Canónicas Disyuntivas: (p∧q∧r)∨(p∧q∧¬r)∨(p∧¬q∧r)∨(¬p∧q∧r)");
+        //jTextArea1_TableTruth.setText("|p | q | r | f(p q r)");
+        //jTextArea2_Canonica.setText("Canónicas Disyuntivas: (p∧q∧r)∨(p∧q∧¬r)∨(p∧¬q∧r)∨(¬p∧q∧r)");
     }
 
     /**
@@ -72,7 +72,6 @@ public class vistaExpresion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1_Guardar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,12 +108,10 @@ public class vistaExpresion extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tabla.png"))); // NOI18N
-
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("Debe guardar la expresión y despues editarla");
+        jLabel4.setText("Guarde y  Edite expresiones");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,17 +124,17 @@ public class vistaExpresion extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(75, 75, 75)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel2)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(Expresion_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton1_Guardar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(Analizar_jButton1))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Expresion_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(23, 23, 23)
+                                    .addComponent(jButton1_Guardar)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(Analizar_jButton1))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(78, 78, 78)
                             .addComponent(jLabel1))))
@@ -156,10 +153,8 @@ public class vistaExpresion extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,7 +171,6 @@ public class vistaExpresion extends javax.swing.JFrame {
     private void Analizar_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Analizar_jButton1ActionPerformed
         nuevoExp = Expresion_jTextField.getText();
         LogicFunction lf = new LogicChain(nuevoExp);
-        JOptionPane.showMessageDialog(this, "Letras invalidas!");
         //LogicFunction s = model.describeSentence(exp.getExpresion());
         jTextArea1_TableTruth.setText(lf.getTruthTableRepresentation());
         jTextArea2_Canonica.setText("Canónicas Disyuntivas: " + lf.expressAsSumOfMinterms() + "\n"+ "Canónicas Conjuntivas: " + lf.expressAsProductOfMaxterms());
@@ -256,7 +250,6 @@ public class vistaExpresion extends javax.swing.JFrame {
     private javax.swing.JButton jButton1_Guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

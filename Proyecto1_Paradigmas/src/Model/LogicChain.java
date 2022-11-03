@@ -53,10 +53,10 @@ public class LogicChain implements LogicFunction {
 
         resetValues();
 
-        res += "â€¢-";
+        res += "----";
         for (int i = 0; i < names.length; i++)
             res += "--";
-        res += "----â€¢\n";
+        res += "-------\n";
 
         res += "|  ";
         for (int i = 0; i < names.length; i++)
@@ -75,10 +75,10 @@ public class LogicChain implements LogicFunction {
             res += " | " + (call() ? "V" : "F") + " |";
         } while (incrementValues());
 
-        res += "\nâ€¢-";
+        res += "\n---";
         for (int i = 0; i < names.length; i++)
             res += "--";
-        res += "----â€¢";
+        res += "-------";
 
         return res;
     }
